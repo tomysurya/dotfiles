@@ -1,1 +1,52 @@
-
+bar:
+  height: 16
+  location: bottom
+  layer: top
+  background: 353535ff
+  foreground: e6e6e6ff
+  margin: 0
+  spacing: 3
+  font: Cantarell:pixelsize=12:style=bold, Font Awesome 6 Free:pixelsize=12:style=solid
+right:
+    - clock:
+        date-format: "%a %d - %b - %Y"
+        content:
+          - string:
+              text: "{time}"
+              margin: 5
+          - string: {text: "{date}",margin: 5}
+  center:
+    - foreign-toplevel:
+        content:
+          map:
+            conditions:
+              ~activated: {empty: {}}
+              activated:
+                - string:
+                    text: "{title}"
+                    max: 60
+                    on-click:
+                      right: niri msg action close-window
+                      left: niri msg action maximize-column
+left:
+    - network:
+        content:
+          map:
+            conditions:
+              state == up:
+              - string: {text: "" ,margin: 9}
+              state == down:
+              - string: {text: "⚠",foreground: d64922ff, margin: 9}
+    - cpu:
+        poll-interval: 500
+        content:
+          map:
+            conditions:
+              id < 0:
+                - string: {text:  }
+                - string: {text: "{cpu}%",right-margin: 9}
+    - mem:
+        poll-interval: 500
+        content:
+        - string: {text: "" , right-margin: 3}
+        - string: {text: "{free:mb}", right-margin: 9}
