@@ -2,51 +2,126 @@ bar:
   height: 16
   location: bottom
   layer: top
-  background: 353535ff
-  foreground: e6e6e6ff
+  background: 35353500
+  foreground: 353535ff
   margin: 0
-  spacing: 3
-  font: Cantarell:pixelsize=12:style=bold, Font Awesome 6 Free:pixelsize=12:style=solid
-right:
-    - clock:
-        date-format: "%a %d - %b - %Y"
+  spacing: 0
+  font: Source Code Pro:pixelsize=14:style=bold, Font Awesome 6 Free:pixelsize=13:style=solid
+
+  right:
+    - label:
         content:
           - string:
+              text: ""
+              foreground: 00eff3ff
+    - clock:
+       content:
+          - string:
               text: "{time}"
-              margin: 5
-          - string: {text: "{date}",margin: 5}
-  center:
-    - foreign-toplevel:
+              margin: 9
+              foreground: 353535ff
+              deco:
+                background:
+                  color: 00eff3ff
+    - label:
         content:
-          map:
-            conditions:
-              ~activated: {empty: {}}
-              activated:
-                - string:
-                    text: "{title}"
-                    max: 60
-                    on-click:
-                      right: niri msg action close-window
-                      left: niri msg action maximize-column
-left:
+          - string:
+              text: ""
+              foreground: 00afffff
+              deco:
+                background:
+                  color: 00eff3ff
+
+    - clock:
+        date-format: "%a%d" 
+        content:
+          - string:
+              text: "{date}"
+              margin: 9
+              deco:
+                background:
+                  color: 00afffff
+    - label:
+        content:
+          - string:
+              text: ""
+              foreground: 097cb0ff
+              deco:
+                background:
+                  color: 00afffff
+    - clock:
+        date-format: "%b" 
+        content:
+          - string:
+              text: "{date}"
+              margin: 9
+              deco:
+                background:
+                  color: 097cb0ff
+
+  left:
     - network:
+        poll-interval: 500
         content:
           map:
             conditions:
               state == up:
-              - string: {text: "" ,margin: 9}
+              - string:
+                  text: ""
+                  margin: 9
+                  foreground: e6e6e6ff
+                  deco:
+                    background:
+                      color: 097cb0ff
               state == down:
-              - string: {text: "⚠",foreground: d64922ff, margin: 9}
+              - string:
+                  text: "⚠ DOWN"
+                  foreground: d64922ff
+                  margin: 9
+                  deco:
+                    background:
+                      color: 097cb0ff
+    - label:
+        content:
+          - string:
+              text: ""
+              foreground: 097cb0ff
+              deco:
+                background:
+                  color: 00afffff
+
     - cpu:
         poll-interval: 500
         content:
           map:
             conditions:
               id < 0:
-                - string: {text:  }
-                - string: {text: "{cpu}%",right-margin: 9}
+                - string:
+                    text: " {cpu}%"
+                    margin: 9
+                    deco:
+                      background:
+                        color: 00afffff
+    - label:
+        content:
+          - string:
+              text: ""
+              foreground: 00afffff
+              deco:
+                background:
+                  color: 00eff3ff
     - mem:
         poll-interval: 500
         content:
-        - string: {text: "" , right-margin: 3}
-        - string: {text: "{free:mb}", right-margin: 9}
+        - string:
+            text: " {free:mb}"
+            margin: 9
+            deco:
+              background:
+                    color: 00eff3ff
+    - label:
+        content:
+          - string:
+              text: ""
+              foreground: 00eff3ff
+
