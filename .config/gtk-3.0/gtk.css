@@ -1,0 +1,39 @@
+VteTerminal,
+ TerminalScreen,
+ vte-terminal {
+     padding: 10px 10px 10px 10px;
+     -VteTerminal-inner-border: 10px 10px 10px 10px;
+ }
+headerbar entry,
+headerbar spinbutton,
+headerbar button,
+headerbar separator {
+    margin-right: 4px;
+    margin-left: 4px;
+    min-height: 0px;
+    padding: 2px;
+    font-size: 12px;
+    color: #00afff;
+}
+headerbar {
+    min-height: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin: 0px;
+    padding: 2px;
+    font-size: 11px;
+    color: #00afff;
+}
+
+decoration, decoration:backdrop {
+    box-shadow: 2px 10px 12px 8px rgba(0, 0, 0, 0.5), 0 2px 12px 5px rgba(0, 0, 0, 0.18);
+}
+tooltip {
+   opacity: 1.0;
+   background: #1a1a1a;
+   border: none;
+}
+.view {
+    padding-left: 5px;
+    padding-right: 2px;
+}
