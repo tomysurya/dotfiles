@@ -1,0 +1,75 @@
+* {
+    font-family: "Cantarell", "Font Awesome 6 Free";
+    font-size: 13px;
+    font-weight: bold;
+}
+#net {
+    color: #00afff;
+    background-image: linear-gradient(120deg, #353535 10%, #5d5d5d 80%);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#disk {
+    color: #4d4d4d;
+    background-image: linear-gradient(120deg, #00afff 10%, #00eff3 80%);
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+#clock {
+    color: #4d4d4d;
+    background-image: linear-gradient(120deg, #00afff 10%, #00eff3 80%);
+    padding-left: 12px;
+    padding-right: 12px;
+}
+#window {
+    color: #666666;
+}
+#ram {
+    color: #4d4d4d;
+    background-image: linear-gradient(240deg, #00afff 10%, #00eff3 80%);
+    padding-left: 12px;
+    padding-right: 12px;
+}
+#temp {
+    color: #00afff;
+    background-image: linear-gradient(240deg, #353535 10%, #5d5d5d 80%);
+    padding-left: 8px;
+    padding-right: 8px;
+}
+#consume {
+    color: #4d4d4d;
+    background-image: linear-gradient(240deg, #00afff 10%, #00eff3 80%);
+    padding-left: 12px;
+    padding-right: 12px;
+}
+#arrowconsume,#arrowdisk {
+    color: #00eff3;
+    background: #353535;
+}
+
+#arrowright,#arrowleft {
+    color: #00eff3;
+}
+
+#arrowtemp,#arrownet {
+    color: #5d5d5d;
+    background: #00afff;
+}
+
+#arrowpoweroff,#arrowreboot {
+    color: #666666;
+    background: #00afff;
+}
+
+button {
+    border:         none;
+    box-shadow:     none;
+    margin-bottom: -8px;
+    margin-top:    -8px;
+    padding-right:  4px;
+    padding-left:   4px;
+    background: #666666;
+    color: #00eff3;
+}
+

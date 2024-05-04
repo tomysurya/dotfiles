@@ -1,0 +1,91 @@
+{
+    "hybrid": {
+        "position": "bottom",
+        "namespace": "hybrid-bar",
+        "r": 53,
+        "g": 53,
+        "b": 53,
+        "a": 0.0
+    },
+     "right-label_arrowright": {
+        "text": ""
+    },
+    "right-label_ram": {
+        "text": " ",
+	"update_anim": "slide_left",
+        "anim_duration": "500",
+	"command": "free --mega | awk '/^Mem:/{print $7}'"
+    },
+    "right-label_arrowtemp": {
+        "text": ""
+    },
+    "right-label_temp": {
+        "command": "sensors -A | awk 'NR==6{print $4}'",
+        "update_rate": "3000",
+        "update_anim": "slide_left"
+    },
+     "right-label_arrowconsume": {
+        "text": ""
+    },
+    "right-label_consume": {
+        "command": "ps axch -o cmd,%mem --sort=-%mem | head | awk 'NR==1{print $1}'",
+        "update_anim": "slide_left"
+    },
+     "right-label_arrowpoweroff": {
+        "text": ""
+    },
+    "right-button_ss": {
+        "text": "",
+        "command": "niri msg action screenshot"
+    },
+    "centered-label_window": {
+        "command": "niri msg focused-window | awk 'NR==3{print $3}'",
+        "update_anim": "slide_left"
+    },
+    "right-button_power": {
+        "text": "",
+        "command": "systemctl poweroff"
+    },
+    "left-button_reboot": {
+        "text": "",
+        "command": "systemctl reboot"
+    },
+    "left-button_logout": {
+        "text": "",
+        "command": "niri msg action quit"
+    },
+        "left-label_arrowreboot": {
+        "text": ""
+    },
+    "left-label_disk": {
+        "text": " ",
+        "command": "df -h | awk 'NR==4{print $4}'",
+        "update_anim": "slide_right"
+    },
+        "left-label_arrowdisk": {
+        "text": ""
+    },
+
+    "left-label_net": {
+        "text": " ",
+        "command": "ip addr | awk '/^2:/{print $8 $9}'",
+        "update_anim": "slide_right"
+    },
+    "left-label_arrownet": {
+        "text": "",
+        "update_rate": "60000",
+        "update_anim": "slide_right"
+    },
+
+    "left-label_clock": {
+        "text": " ",
+        "command": "date +%H:%M",
+	"update_rate": "60000",
+	"update_anim": "slide_right",
+        "anim_duration": "500",
+	"tooltip_command": "date +%d-%b-%Y"
+    },
+    "left-label_arrowright": {
+        "text": ""
+    }
+}
