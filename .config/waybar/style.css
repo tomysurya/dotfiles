@@ -1,0 +1,119 @@
+* {
+    	font-family: Cantarell, FontAwesome;
+	font-size: 13px;
+	font-weight: bold;
+	min-height: 0px;
+	margin-bottom: -1.5px;
+}
+window#waybar {
+    	background-color: transparent;
+    	transition-property: background-color;
+    	transition-duration: .5s;
+}
+#clock,#network {
+        background-image: linear-gradient(120deg, #00afff 10%, #00eff3 80%);
+	color: #4d4d4d;
+	padding: 0px 12px;
+	margin: 4px 0px;
+  	margin-left: 5px;
+	border-radius: 20px;
+}
+#network.disconnected {
+	padding: 0px 12px;
+    	background: #b0442e;
+    	color: #cccccc;
+	margin: 4px 0px;
+	border-radius: 20px;
+}
+#custom-ss,#custom-mount {
+	color: #666666;
+	margin: 4px 0px;
+	margin-left: 4px;
+	padding: 0px 4px;
+}
+
+#custom-youtube,#custom-whatsapp,#custom-instagram,#custom-drive {
+	color: #666666;
+	margin: 4px 0px;
+	margin-left: 4px;
+	padding: 0px 4px;
+	font-weight: normal;
+}
+#custom-label {
+	color: #4d4d4d;
+}
+#taskbar button {
+	color: #5d5d5d;
+	padding: 0px 7px;
+	margin: 0px;
+}
+#taskbar button.active {
+	color: #00efff;
+	padding: 0px 7px;
+	margin: 0px;
+}
+
+#memory,#cpu {
+        background-image: linear-gradient(240deg, #00afff 10%, #00eff3 80%);
+	color: #353535;
+	padding: 0px 12px;
+	margin: 4px 0px;
+  	margin-left: 5px;
+	border-radius: 20px;
+}
+
+#keyboard-state label {
+	color: #666666;
+	border: 1px solid #666666;
+	padding: 0px 8px;
+	margin: 4px 0px;
+	margin-left:5px;	
+	border-radius: 20px;
+}
+#keyboard-state label.locked {
+	color: #ffffff;
+	background-image: linear-gradient(240deg, #00afff 0%, #00eff3 100%);
+	border: 1px solid #00eff3;
+	padding: 0px 8px;
+	margin: 4px 0px;
+	margin-left:5px;	
+	border-radius: 20px;
+}
+
+#custom-power,#custom-apps {
+	background-image: linear-gradient(120deg, #4d4d4d 10%, #666666 80%);
+	color: #00eff3;
+	padding: 0px 12px;
+	margin: 4px 0px;
+	margin-right: 5px;	
+	margin-left: 5px;	
+	border-radius: 20px;
+}
+
+#custom-shutdown,
+#custom-reboot,
+#custom-logout,
+#custom-chromium,
+#custom-inkscape,
+#custom-tilix,
+#custom-pcmanfm,
+#custom-scanner,
+#custom-eog,
+#custom-calculator {
+	background: transparent;
+	color: #00eff3;
+	padding: 0px 5px;
+	margin: 4px 0px;
+	margin-left: 5px;
+}
+tooltip {
+	border: 0px;
+	background-color: #00afff;
+}
+tooltip label {
+	color: #353535;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 0px 15px;
+}
+

@@ -1,0 +1,204 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 10,
+    "width": 1335,
+    "spacing": 5,
+    "modules-left": [
+	"network",
+	"custom/drive",
+	"custom/whatsapp",
+	"custom/instagram",
+	"custom/youtube",
+	"clock",
+	"group/group-apps"],
+    "modules-center": ["custom/label"],
+    "modules-right": [
+	"wlr/taskbar",
+	"memory",
+	"custom/mount",
+	"custom/ss",
+	"keyboard-state",
+	"cpu",
+	"group/group-power"
+    ],
+    "network": {
+        "format-ethernet": " UP",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "DOWN ⚠",
+        "tooltip": false
+    },
+    "custom/drive": {
+	"format": "",
+	"on-click": "chromium https://drive.google.com",
+	"tooltip": false
+    },
+    "custom/instagram": {
+	"format": "",
+	"on-click": "chromium https://instagram.com",
+	"tooltip": false
+    },
+    "custom/whatsapp": {
+	"format": "",
+	"on-click": "chromium https://web.whatsapp.com",
+	"tooltip": false
+    },
+    "custom/youtube": {
+	"format": "",
+	"on-click": "chromium https://youtube.com",
+	"tooltip": false
+    },
+
+    "clock": {
+	"format": "{:%H:%M }",
+        "tooltip-format": "<big>{:%d %a}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "group/group-apps": {
+    	"orientation": "horizontal",
+    	"drawer": {
+        	"transition-duration": 400,
+        	"transition-left-to-right": false
+    },
+    "modules": [
+	"custom/apps",
+	"custom/chromium",
+	"custom/inkscape",
+        "custom/tilix",
+        "custom/pcmanfm",
+	"custom/scanner",
+	"custom/eog",
+	"custom/calculator"
+    	]
+    },
+    "custom/apps": {
+	"format": " Apps",
+	"tooltip": false
+    },
+    "custom/chromium": {
+	"format": "",
+	"on-click": "chromium",
+	"tooltip": false
+    },
+    "custom/inkscape": {
+	"format": "",
+	"on-click": "inkscape",
+	"tooltip": false
+    },
+    "custom/tilix": {
+	"format": "",
+	"on-click": "tilix",
+	"tooltip": false
+    },
+    "custom/pcmanfm": {
+	"format": "",
+	"on-click": "pcmanfm",
+	"tooltip": false
+    },
+    "custom/scanner": {
+	"format": "",
+	"on-click": "GTK_THEME=Adwaita-dark simple-scan",
+	"tooltip": false
+    },
+    "custom/eog": {
+	"format": "",
+	"on-click": "eog",
+	"tooltip": false
+    },
+    "custom/calculator": {
+	"format": "",
+	"on-click": "GTK_THEME=Adwaita-dark gnome-calculator",
+	"tooltip": false
+    },
+// centered area
+    "custom/label": {
+	"format": "Bright Linux",
+	"on-click": "niri msg action focus-workspace-down",
+	"on-click-right": "niri msg action focus-workspace-up",
+	"tooltip": false
+    },
+// centered area
+    "wlr/taskbar": {
+	"all-outputs": true,
+	"format": "{app_id}",
+	"on-click": "activate",
+	"on-click-right": "close",
+	"tooltip": false,
+	"rewrite": {
+		"chromium": "",
+		"org.inkscape.Inkscape": "",
+		"Tilix": "",
+		"pcmanfm": "",
+		"simple-scan": "",
+		"eog": "",
+		"org.gnome.Calculator": ""	
+	}
+    },
+    "memory": {
+        "format": " {avail} Gb",
+	"interval": 1,
+	"tooltip": false
+    },
+    "custom/ss": {
+	"format": "",
+	"on-click": "niri msg action screenshot",
+	"on-click-right": "niri msg action screenshot-window",
+	"tooltip": false
+    },
+
+    "custom/mount": {
+	"format": "",
+	"on-click": "sudo mount /dev/sda2 ~/filez/datz & notify-send ' Disk Mounted!' -t 3000",
+	"on-click-right": "sudo umount ~/filez/datz & notify-send ' Disk Unmounted!' -t 3000",
+	"tooltip": false
+    },
+
+    "keyboard-state": {
+    	"numlock": true,
+    	"capslock": true,
+    	"format": {
+        	"numlock": "N",
+		"capslock": "C"
+    	}
+    },
+  
+    "cpu": {
+	"interval": 2,
+     	"format": " {usage}%",
+     	"tooltip": false
+    },
+
+    "group/group-power": {
+    	"orientation": "horizontal",
+    	"drawer": {
+        	"transition-duration": 400,
+        	"transition-left-to-right": false
+    },
+    "modules": [
+	"custom/power",
+	"custom/shutdown",
+        "custom/reboot",
+        "custom/logout"
+    	]
+    },
+    "custom/power": {
+    	"format": "",
+    	"tooltip": false
+    },
+    "custom/shutdown": {
+    	"format": "",
+    	"on-click": "notify-send 'Machine WIll Shutdown' -t 2000 && systemctl poweroff",
+    	"tooltip": false
+    },
+    "custom/reboot": {
+    	"format": "",
+    	"tooltip": false,
+    	"on-click": "systemctl reboot"
+    },
+
+    "custom/logout": {
+        "format": "",
+        "on-click": "niri msg action quit",
+        "tooltip": false
+    }
+}
