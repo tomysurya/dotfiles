@@ -22,3 +22,24 @@
 		    :box '(:line-width 2 :color "#a6db21")
 		    :overline nil
                     :underline nil)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(setq recentf-max-saved-items 25)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
+(global-display-line-numbers-mode 1)
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+(display-time-mode 1)
+(global-hl-line-mode 1)
+
+(setq package-archive '(("melpa" . "https://melpa.org/packages/")
+			("melpa-stable" . "https://stable.melpa.org/packages/")
+			("elpa" . "https://elpa.gnu.org/packages/")))
+ 
+(package-initialize)
+(unless package-archive-contents
+ (package-refresh-contents))
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+(require 'use-package)
+(setq use-package-always-ensure t)
